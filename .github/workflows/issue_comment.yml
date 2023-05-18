@@ -11,6 +11,13 @@ jobs:
       - name: "dump github context"
         run: echo '${{ toJSON(github.event) }}' | jq
         shell: bash
+  
+  debug-github-event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: debug github event
+        run: echo ${{ github.event.GITHUB_TOKEN }}
+        shell: bash
       
   comment-with-api:
     runs-on: ubuntu-latest
