@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: debug github event
-        run: echo ${{ github.event.GITHUB_TOKEN }}
+        run: echo ${GITHUB_TOKEN}, ${ORGANIZATION}, ${REPOSITORY}, ${ISSUE_NUMBER}
         shell: bash
       
   comment-with-api:
