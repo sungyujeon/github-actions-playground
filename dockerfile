@@ -1,4 +1,5 @@
 FROM adoptopenjdk:11-jre-hotspot
-COPY build/libs/*.jar /healthcheck.jar
+RUN mkdir /app
+COPY build/libs/*.jar /app/healthcheck.jar
 EXPOSE 8080
-CMD ["java", "-jar", "/healthcheck.jar"]
+CMD ["java", "-jar", "/app/healthcheck.jar"]
