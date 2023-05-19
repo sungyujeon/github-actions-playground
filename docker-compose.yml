@@ -2,6 +2,7 @@ services:
 
   web:
     image: imhero/healthcheck:latest
+    platform: linux/amd64
     container_name: imhero-web
     restart: always
     ports:
