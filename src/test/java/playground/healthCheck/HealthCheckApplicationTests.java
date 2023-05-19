@@ -8,7 +8,6 @@ import org.springframework.test.context.ActiveProfiles;
 import javax.sql.DataSource;
 
 @SpringBootTest
-@ActiveProfiles("test")
 class HealthCheckApplicationTests {
 	@Test
 	void contextLoads() {
