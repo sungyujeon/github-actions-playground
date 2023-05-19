@@ -7,8 +7,6 @@ services:
     restart: always
     ports:
       - "8080:8080"
-    environment:
-      - "SPRING_PROFILES_ACTIVE=local"
 
 #    env_file:
 #      - .env
