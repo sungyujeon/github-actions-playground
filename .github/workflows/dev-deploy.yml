@@ -38,6 +38,6 @@ jobs:
           REPO: healthcheck   # DockerHub 레포 이름
           IMAGE: healthcheck  # Docker 이미지 이름
         run: |
-          docker build -f ./dockerfile-dev -t $IMAGE .
+          docker build -f ./dockerfile -t $IMAGE .
           docker tag $IMAGE:latest $NAME/$REPO:latest
           docker push $NAME/$REPO:latest
