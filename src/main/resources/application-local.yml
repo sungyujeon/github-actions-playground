@@ -3,7 +3,8 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/healthcheck
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/healthcheck
+    url: jdbc:mysql://host.docker.internal:3306/healthcheck  # docker로 app을 실행시킬 때 host에 이미 실행 중인 mysql 서버와 통신하기 위해 사용된다.
     username: root
     password:
-    driver-class-name: com.mysql.cj.jdbc.Driver
