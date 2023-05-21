@@ -1,6 +1,6 @@
 services:
 
-  web:
+  hc-web:
     image: imhero/healthcheck:latest
     platform: linux/amd64
     container_name: imhero-web
@@ -9,5 +9,18 @@ services:
       - "8080:8080"
     environment:
       - "SPRING_PROFILES_ACTIVE=local"
-    env_file:
-      - .env
+    depends_on:
+      - hc-mysql
+
+  hc-mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: healthcheck
+      MYSQL_USER: root
+      MYSQL_PASSWORD:
+    volumes:
+      - hc-mysql_data:/var/lib/mysql
+
+volumes:
+  hc-mysql_data:
